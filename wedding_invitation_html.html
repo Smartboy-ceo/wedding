@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To‘y Taklifnomasi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @font-face {
+        font-family: 'SamsungSharpSans';
+        src: url('SamsungSharpSans-Bold.ttf') format('truetype');
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'SamsungSharpSans', sans-serif;
+        color: #000;
+        background: url('Без названия.jpg') no-repeat center center fixed;
+        background-size: cover;
+        overflow-x: hidden;
+      }
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 40vh;
+        width: 60%;
+        padding: 2rem;
+        backdrop-filter: blur(12px);
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        margin: 2rem auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .section:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        animation: blink 0.6s alternate infinite;
+      }
+      @keyframes blink {
+        0% { opacity: 1; }
+        100% { opacity: 0.8; }
+      }
+      .title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #000;
+      }
+      .content {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .countdown {
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+      }
+      .count-item {
+        text-align: center;
+      }
+      .count-number {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .count-label {
+        font-size: 1rem;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 230.52px;
+        min-height: 56px;
+        font-family: calibri;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        font-weight: 400;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background-color: #198754;
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background-color: #157347;
+      }
+      .btn-primary:active {
+        box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, .5);
+      }
+      .yellow {
+        border: 2px solid #1567f4;
+        color: rgb(22, 104, 245);
+        background-color: #fff;
+      }
+      .yellow:hover ion-icon {
+        transform: translateX(10px);
+      }
+      .btn span {
+        font-size: 20px;
+        padding: 0 10px;
+      }
+      ion-icon {
+        font-size: 2em;
+        transition: all 0.5s linear;
+      }
+      .btn:hover ion-icon {
+        transform: rotate(-90deg);
+      }
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const targetDate = new Date('2025-08-18T18:00:00').getTime();
+        const updateCountdown = () => {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((distance / 1000 / 60) % 60);
+          const seconds = Math.floor((distance / 1000) % 60);
+          document.getElementById('days').textContent = days;
+          document.getElementById('hours').textContent = hours;
+          document.getElementById('minutes').textContent = minutes;
+          document.getElementById('seconds').textContent = seconds;
+        };
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      });
+    </script>
+  </head>
+  <body>
+    <section class="section">
+      <h1 class="title">HURMATLI MEHMONLAR!</h1>
+      <p class="content">
+        Sizni Shahzodbek va Xonzodaxonning nikoh to‘yiga <br />
+        faxriy mehmon sifatida taklif qilamiz.<br />
+        Qutlug‘ kunda biz bilan bo‘ling!
+      </p>
+      <div class="countdown">
+        <div class="count-item">
+          <div id="days" class="count-number">0</div>
+          <div class="count-label">kun</div>
+        </div>
+        <div class="count-item">
+          <div id="hours" class="count-number">0</div>
+          <div class="count-label">soat</div>
+        </div>
+        <div class="count-item">
+          <div id="minutes" class="count-number">0</div>
+          <div class="count-label">daqiqa</div>
+        </div>
+        <div class="count-item">
+          <div id="seconds" class="count-number">0</div>
+          <div class="count-label">soniya</div>
+        </div>
+      </div>
+      <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+        <a class="btn btn-primary" href="https://yandex.uz/maps/-/CHsvNLMR" target="_blank">
+          <ion-icon name="location-outline"></ion-icon>
+          <span>Manzilga o'tish</span>
+        </a>
+        
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title">To‘y haqida</h2>
+      <p class="content">
+        To‘y egalari: Bahodir Bekto‘rayevlar oilasi <br />
+        Sana: 18-avgust, 2025 — Soat 18:00 <br />
+        Manzil: Toshkent koʻchasi, 7/1D, Ulugʻbek MFY, Jizzax <br />
+        <strong>"Al Qasr" to‘yxonasi</strong>
+      </p>
+      <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;"></div>
+        
+        <a class="btn yellow" href="https://t.me/share/url?url=https://sizning-saytingiz.uz&text=Shahzodbek va Xonzodaxonning to‘yiga taklif etamiz!" target="_blank">
+          <ion-icon name="send-outline"></ion-icon>
+          <span>Telegramda ulashish</span>
+        </a>
+      </div>
+    </section>
+  </body>
+</html>
